@@ -1,25 +1,48 @@
-import logo from './logo.svg';
+import {useState} from 'react'
+import {Routes, Route} from 'react-router-dom'
 import './App.css';
+import items from "./data"
+import ItemCards from './Components/ItemCards'
+import Header from './Components/Header'
+import SelectedItem from './Components/SelectedItem';
+import Cart from './Components/Cart';
 
-function App() {
+const App = () => {
+
+  const [cartItems, setCartItems] = useState(items)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Routes>
+        <Route 
+          path="/selecteditem/:id"
+          element={<SelectedItem
+            items={items}
+          />}
+        />
+        <Route 
+          path="/allitems"
+          element={<ItemCards
+            items={items}
+          />}
+        />
+        <Route 
+          path="/cart"
+          element={<Cart
+            cartItems={cartItems}
+            setCartItems={setCartItems}
+          />}
+        />
+      </Routes>
+      {/* {selectedItem && <SelectedItem
+        selectedItem={selectedItem}
+      />}
+      {!selectedItem && <ItemCards
+        items={items}
+      />} */}
     </div>
-  );
+  )
 }
 
 export default App;

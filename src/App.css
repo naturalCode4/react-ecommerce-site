@@ -3,29 +3,54 @@
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 8vh;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+    animation: App-logo-spin infinite 12s linear;
   }
+}
+
+h1 {
+  font-size: 28px;
 }
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 14vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: left;
+  /* justify-content: center; */
+  font-size: calc(7px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-features{
+  display: flex;
+}
+
+.App-features-b {
+  align-items: right;
+}
+
+.cart_button {
+  margin-left: 2vw;
+  height: calc(2vh + 20px);
+  position: absolute;
+  right: 2vw;
+  top: 3vh;
+  /* justify-content: center; */
+}
+
+.search_bar {
+  border-radius: 100px;
+  background-color: rgb(219, 251, 241);
+  width: 85vw;
+  height: 175%;
+  padding-left: 3vw;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +60,62 @@
   to {
     transform: rotate(360deg);
   }
+}
+.selected_item {
+  background-color: rgb(250, 170, 170);
+}
+
+.item_cards {
+  background-color: #816ef2;
+  overflow: auto;
+}
+
+.all_items {
+  background-color: #816ef2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2vw;
+}
+
+.item_card {
+  background-color: #bcb5e4;
+  border-color: rgb(250, 170, 170);
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 15px;
+  width: 250px;
+  height: auto;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.item_image {
+  width: 100%;
+  border-top-left-radius: 11.5px;
+  border-top-right-radius: 11.5px;
+}
+
+.selected_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+
+.selected_item_org {
+  display: flex;
+  flex-direction: row;
+}
+
+.go_back_container {
+  display: flex;
+  width: 100%;
+  margin: 10px;
+}
+
+.back_to_all_items_button {
+  justify-content: left;
 }
