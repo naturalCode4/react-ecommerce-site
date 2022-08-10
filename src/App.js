@@ -9,11 +9,18 @@ import Cart from './Components/Cart';
 
 const App = () => {
 
-  const [cartItems, setCartItems] = useState(items)
+  const [cartItems, setCartItems] = useState([])
+  const [filteredItems, setFilteredItems] = useState(items)
+    
+  console.log('rendering App')
 
   return (
     <div className="App">
-      <Header/>
+      <Header
+        items={items}
+        filteredItems={filteredItems}
+        setFilteredItems={setFilteredItems}
+      />
       <Routes>
         <Route 
           path="/selecteditem/:id"
@@ -22,9 +29,11 @@ const App = () => {
           />}
         />
         <Route 
-          path="/allitems"
+          path="/"
           element={<ItemCards
             items={items}
+            cartItems={cartItems}
+            setCartItems={setCartItems}
           />}
         />
         <Route 
@@ -35,12 +44,7 @@ const App = () => {
           />}
         />
       </Routes>
-      {/* {selectedItem && <SelectedItem
-        selectedItem={selectedItem}
-      />}
-      {!selectedItem && <ItemCards
-        items={items}
-      />} */}
+
     </div>
   )
 }

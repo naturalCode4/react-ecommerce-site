@@ -9,7 +9,7 @@ const SelectedItem = ({items}) => {
     return (
         <div className="selected_item">
             <div className="go_back_container">
-                <Link to="/allitems" className="back_to_all_items_button">
+                <Link to="/" className="back_to_all_items_button">
                     <button>Go Back</button>
                 </Link>
             </div>

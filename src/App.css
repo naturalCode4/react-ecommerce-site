@@ -119,3 +119,14 @@ h1 {
 .back_to_all_items_button {
   justify-content: left;
 }
+
+.cart_item {
+  background-color: #816ef2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cart_item_image {
+  width: 35%
+}

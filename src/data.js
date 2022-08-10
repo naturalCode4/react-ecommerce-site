@@ -13,7 +13,7 @@ const items = [
     },
     {
         id: 2,
-        name: 'Cool Cactus Tshirt',
+        name: 'Cool Cactus - Tshirt',
         category: 'Shirts',
         maker: 'Carl',
         colors: [
