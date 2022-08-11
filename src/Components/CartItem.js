@@ -5,7 +5,7 @@ const CartItem = ({item, cartItems, setCartItems, getTotalPrice, getNumItems}) =
     console.log('rendering CartItem. item.quantity: ', item.quantity)
 
     return (
-        <div key={item.id} className="cart_item">
+        <div className="cart_item">
             <div>
                 <h2>{item.name}</h2>
                 <img src={item.imageurl} alt="couldnt display img properly" className="cart_item_image"/>

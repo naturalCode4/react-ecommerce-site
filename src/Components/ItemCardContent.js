@@ -13,10 +13,6 @@ const ItemCardContent = ({item, cartItems, setCartItems}) => {
             setCartItems([...cartItems])
         }
         console.log(item.price, item.quantity)
-        // getTotalPrice()
-        // getNumItems()
-        // setTotalCartPrice(totalCartPrice)
-        // setNumOfCartItems(numOfCartItems)
     }
 
     return (

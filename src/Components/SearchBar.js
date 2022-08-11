@@ -1,7 +1,8 @@
-import { getValue } from "@testing-library/user-event/dist/utils"
 import { useState } from "react"
 
 const SearchBar = ({items, filteredItems, setFilteredItems}) => {
+
+    console.log('filteredItems: ', filteredItems)
 
     const [searchText, setSearchText] = useState('')
 
@@ -14,25 +15,22 @@ const SearchBar = ({items, filteredItems, setFilteredItems}) => {
             }
         })
         item.searchCriteria += item.name + ' ' + item.category + ' ' + item.maker + ' ' + itemColorsString
-        console.log('colors: ', itemColorsString)
+        item.searchCriteria = item.searchCriteria.toLowerCase()
     })
     
-    console.log('searchCriteria: ', filteredItems[1].searchCriteria)
     console.log('searchText: ', searchText)
+    console.log('item.searchCriteria: ', items[3].searchCriteria)
     
     const searchFilterItems = () => {
         let filtered = []
         filteredItems.forEach(item => {
-            console.log('hihihi ', item)
             if (item.searchCriteria.includes(searchText)) {
                 filtered.push(item)
             }
         })
-        setFilteredItems([...filtered])
+        setFilteredItems(filtered)
         return filteredItems
     }
-
-    console.log('searchFilterItems: ', searchFilterItems())
     
     return (
         <div>
@@ -41,7 +39,9 @@ const SearchBar = ({items, filteredItems, setFilteredItems}) => {
                 className="search_bar"
                 placeholder="Search for items"
                 onChange={e => {
-                    setSearchText(e.target.value)
+                    console.log('e.target.value: ', e.target.value)
+                    setSearchText(e.target.value.toLowerCase())
+                    console.log('change')
                     searchFilterItems()
                 }}
             ></input>

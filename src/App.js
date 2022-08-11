@@ -13,6 +13,7 @@ const App = () => {
   const [filteredItems, setFilteredItems] = useState(items)
     
   console.log('rendering App')
+  console.log('filteredItems: ', filteredItems)
 
   return (
     <div className="App">
@@ -32,6 +33,7 @@ const App = () => {
           path="/"
           element={<ItemCards
             items={items}
+            filteredItems={filteredItems}
             cartItems={cartItems}
             setCartItems={setCartItems}
           />}

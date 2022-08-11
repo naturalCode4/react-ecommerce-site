@@ -1,12 +1,12 @@
 import React from "react"
 import ItemCardContent from "./ItemCardContent"
 
-const ItemCards = ({items, cartItems, setCartItems, totalCartPrice, numOfCartItems, setTotalCartPrice, setNumOfCartItems, getTotalPrice, getNumItems}) => {
+const ItemCards = ({items, filteredItems, cartItems, setCartItems, totalCartPrice, numOfCartItems, setTotalCartPrice, setNumOfCartItems, getTotalPrice, getNumItems}) => {
     return (
         <div className="item_cards">
             <h2>Find the item of your dreams</h2>
             <div className="all_items">
-            {items.map(item => {
+            {filteredItems.map(item => {
                 return (
                     <ItemCardContent
                         key={item.id}
